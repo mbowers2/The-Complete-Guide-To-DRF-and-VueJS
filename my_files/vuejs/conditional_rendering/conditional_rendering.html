@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conditional Rendering</title>
+</head>
+<body>
+    
+    <div id="app">
+        <!-- dummy v-if v-else example 
+        <h1 v-if="auth">Your User Profile</h1>
+        <h1 v-else>Login to access your profile!</h1>
+        -->
+        <h1>Product: {{ product }}</h1>
+        <h2 v-if="quantity >= 20">Available</h2>
+        <h2 v-else-if="quantity > 0 && quantity < 20">Limited</h2>
+        <h2 v-else>Sold Out!</h2>
+        <br>
+        <h3 v-show="sale">On Sale!</h3>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="main.js"></script>
+
+</body>
+</html>

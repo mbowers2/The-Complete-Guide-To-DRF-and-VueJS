@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <title>Todo</title>
+    <style>
+        .no-outline {
+            outline: 0 !important;
+        }
+        .no-outline:not(:disabled):not(.disabled):focus {
+            color: #6c757d;
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+    <div class="container mt-2">
+        <div class="jumbotron py-4 mb-2">
+            <h1 class="display-4">To-Do List</h1>
+        </div>
+    </div>
+    <div class="container">
+        <div id="app">
+            <remain-tasks :remain-tasks="numTasks"></remain-tasks>
+            <task-input @add-task="addNewTask"></task-input>
+            <task-list 
+                :tasks="tasks"
+                :remove-callback="removeCompletedTask"
+            ></task-list>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="main.js"></script>
+
+</body>
+</html>
